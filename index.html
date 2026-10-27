@@ -128,7 +128,7 @@ function render(){
   $('#leftBig').innerHTML=(state.allow?inr(left):'-')+(state.allow?`<small> of ${inr(state.allow)}</small>`:'');
   $('#leftSub').textContent=state.allow?`${inr(s.tot)} spent since ${c.startKey}`:'Set your monthly allowance below to start.';
   $('#safeBig').textContent=state.allow?inr(safe):'-';
-  $('#safeSub').textContent=state.allow?`${c.left} day${c.left>1?'s':''} left in this cycle - today included`:'';
+  $('#safeSub').textContent=state.allow?`${c.left} day${c.left>1?'s':''} left in this cycle - spent ${inr(s.tod)} today so far`:'';
   const frac=c.elapsed/c.totalDays*100;
   $('#paceFill').style.width=Math.min(100,state.allow?s.tot/state.allow*100:0)+'%';
   $('#paceFill').style.background=state.allow&&s.tot/state.allow>frac/100+0.08?'var(--warn)':'var(--acc)';
